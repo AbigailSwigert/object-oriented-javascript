@@ -1,8 +1,22 @@
-//1. Create a Class called WhyClass.  This class should have one property, and two methods.  THe property is called "purpose", and stores a string.  This string should clearly explain why classes are used in Object Oriented Programming.  The first method is called explain().  This method should print the contents stored in the purpose 'field' of the class.  The second method is called pieces().  This 2nd method should print out the various parts that are essential to building a class.  Instantiate the class, and invoke the method so the results are showing in the console once this file is run.
+//1. Create a Class called WhyClass.  This class should have one property, and two methods.  The property is called "purpose", and stores a string.  This string should clearly explain why classes are used in Object Oriented Programming.  The first method is called explain().  This method should print the contents stored in the purpose 'field' of the class.  The second method is called pieces().  This 2nd method should print out the various parts that are essential to building a class.  Instantiate the class, and invoke the method so the results are showing in the console once this file is run.
 
 //your code here...
 
-
+class WhyClass {
+    constructor() {
+      this.purpose = 'Classes are templates for creating objects, defining classes allows you to create multiple objects that share properties and methods without repeating the same code over and over.'
+    }
+    explain() {
+      console.log(this.purpose)
+    }
+    pieces() {
+      console.log('constructor, properties, methods')
+    }
+}
+  
+const newClass = new WhyClass
+newClass.explain();
+newClass.pieces();
 
 /*2. You are exploring the rainforests of the Amazon.  You have observed many different types of wildlife on your excursion.  To jog your memory, some different types of wildlife that you observed are found in the following URL : https://www.ietravel.com/blog/amazon-rainforest-animals-beginners-guide-21-species.  Feel free to use other resources online if you wish.
 
