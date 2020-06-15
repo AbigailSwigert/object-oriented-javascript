@@ -176,19 +176,25 @@ Bonus Exercises:
 
 */
 
-class Earth {
-    name;
-    planetNum; //distance from the sun.  1-mercury, 2-venus, 3-earth, ...
+// class Earth {
+//     name;
+//     planetNum; //distance from the sun.  1-mercury, 2-venus, 3-earth, ...
 
-    constructor(name,num) {
-        this.name = name;
-        this.planetNum = num;
-    }
+//     constructor(name,num) {
+//         this.name = name;
+//         this.planetNum = num;
+//     }
 
+// }
+
+// const earth = new Earth('earth',3);
+// console.log(earth);
+
+const earth = {
+    name: 'Earth',
+    planetNum: 3,
 }
-
-const earth = new Earth('earth',3);
-console.log(earth);
+//console.log(earth);
 
 
 
