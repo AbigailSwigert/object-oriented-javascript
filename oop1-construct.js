@@ -25,7 +25,37 @@ Create a class that can categorize at least 6 of the creatures that you recall o
 
 //your code here...
 
+class Animal {
+    constructor(species, maxWeightInLbs, funFact, food, movement) {
+        this.species = species;
+        this.maxWeightInLbs = maxWeightInLbs;
+        this.funFact = funFact;
+        this.food = food;
+        this.movement = movement;
+    }
 
+    eat() {
+        console.log(`The ${this.species} is eating ${this.food}.`)
+    }
+
+    move() {
+        console.log(`The ${this.species} is ${this.movement} through the Amazon!`)
+    }
+}
+
+const capybara = new Animal('Capybara', 140, 'Capybaras are very sociable and live in groups of 10-30.', 'grass', 'walking')
+
+const giantOtter = new Animal('Giant River Otter', 71, 'A Giant River Otter can reach 5ft in length plus a 3ft tail.', 'fish', 'swimming')
+
+const jaguar = new Animal('Jaguar', 348, 'Jaguars can hunt in the tress, so you may hear them, but be unable to see them through the dense canopy.', 'a capybara', 'stalking prey')
+
+const squirrelMonkey = new Animal('Squirrel Monkey', 2.4, "The fur on a squirrel monkey's face is black and white, vaguely resembling a skull.", 'fruits', 'jumping from tree to tree')
+
+const hoatzin = new Animal('Hoatzin', 1.78, "Hoatzin are commonly refered to as the 'punk-rock bird' due to their mohawk-like crest.", 'swamp plants', 'flying')
+
+const blackCaiman = new Animal('Black Caiman', 800, 'The Black Caiman is the largest reptile in the Amazon.', 'an older, weaker Caiman', 'swimming lazily')
+
+const greenAnaconda = new Animal('Green Anaconda', 150, 'Green Anacondas are non-venomous, killing their prey by suffocaton then swallowing it whole.', 'a jaguar', 'slithering')
 
 
 /*3. Convert the following Object Literals into a general class called Shape, and instantiate the class to generate the object literals
