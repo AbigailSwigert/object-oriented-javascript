@@ -64,61 +64,106 @@ const greenAnaconda = new Animal('Green Anaconda', 150, 'Green Anacondas are non
 
 class Shape {
     //your code here...
-}
-
-
-const triangle = {
-    name : "triangle",
-    sides : [4,7,7], //lengths of each side
-    base : null,
-    height : null, //determine this height using basic geometry.  You may need to research this one.
-    calcArea : function() {
-        console.log(`${this.name}'s area is calculated to be : ${.5 * this.base * this.height}`);
-    },
-    calcPerimeter : function() {
-        console.log(`${this.name}'s perimeter is calculated to be : ${(this.base) + (this.sides[1] + this.sides[2]) }`)
+    constructor(name, sides, base, height, length, width, radius) {
+        this.name = name;
+        this.sides = sides;
+        this.base = base;
+        this.height = height;
+        this.length = length;
+        this.width = width;
+        this.radius = radius;
+    };
+    calcHeight() {
+        return Math.sqrt(Math.pow(this.sides[1], 2) - Math.pow((.5 * this.base), 2)).toFixed(2)
     }
-}
-
-triangle.base = triangle.sides[0];  //base is the 1st side in the triangle.sides array.
-triangle.height = 6.71; //determine the height using basic geometry.  How do you calculate the height of a triangle with 2 equal sides?  If you use the formula to caluclate the height, this is a bonus.  If you hard code the correct value here, that will be sufficient, but no bonus :(
-
-console.log(triangle);
-triangle.calcArea();
-triangle.calcPerimeter();
-
-const rectangle = {
-    name : "rectangle",
-    sides : 4,
-    length : 2,
-    width : 5,
-    calcArea : function() {
-        console.log(`${this.name}'s area is calculated to be : ${this.length * this.width}`);
-    },
-    calcPerimeter : function() {
-        console.log(`${this.name}'s perimeter is calculated to be : ${(2 * this.length) + (2 * this.width) }`)
+    calcArea() {
+        if(this.name === 'triangle') {
+            console.log(`${this.name}'s area is calculated to be : ${ 0.5 * this.base * this.height}`);
+        } else if (this.name === 'rectangle') {
+           console.log(`${this.name}'s area is calculated to be : ${this.length * this.width}`);
+        } else if (this.name === 'circle') {
+            console.log(`${this.name}'s area is calculated to be : ${(Math.PI * this.radius**2).toFixed(2)}`);
+        }
     }
-}
-
-console.log(rectangle);
-rectangle.calcArea();
-rectangle.calcPerimeter();
-
-const circle = {
-    name : "circle",
-    sides : 1,
-    radius : 5,
-    calcArea : function() {
-        console.log(`${this.name}'s area is calculated to be : ${(Math.PI * this.radius**2).toFixed(2)}`);
-    },
-    calcCircumference : function() {
+    calcPerimeter() {
+        console.log(`${this.name}'s perimeter is calculated to be : ${this.sides.reduce((a,b) => a + b, 0)}`)
+    }
+    calcCircumference() {
         console.log(`${this.name}'s circumference is calculated to be : ${(2 * Math.PI * this.radius).toFixed(2)}`)
     }
 }
 
-console.log(circle);
-circle.calcCircumference();
-circle.calcArea();
+const myTriangle = new Shape('triangle', [4,7,7], null, null, null, null, null);
+myTriangle.base = myTriangle.sides[0];
+myTriangle.height = myTriangle.calcHeight();
+
+const myRectangle = new Shape('rectangle', [2,5,2,5], null, null, 2, 5, null);
+
+const myCircle = new Shape('circle', null, null, null, null, null, 5);
+
+// console.log(myTriangle);
+// myTriangle.calcArea();
+// myTriangle.calcPerimeter();
+// console.log(myRectangle);
+// myRectangle.calcArea();
+// myRectangle.calcPerimeter();
+// console.log(myCircle);
+// myCircle.calcArea();
+// myCircle.calcCircumference();
+
+
+// const triangle = {
+//     name : "triangle",
+//     sides : [4,7,7], //lengths of each side
+//     base : null,
+//     height : null, //determine this height using basic geometry.  You may need to research this one.
+//     calcArea : function() {
+//         console.log(`${this.name}'s area is calculated to be : ${.5 * this.base * this.height}`);
+//     },
+//     calcPerimeter : function() {
+//         console.log(`${this.name}'s perimeter is calculated to be : ${(this.base) + (this.sides[1] + this.sides[2]) }`)
+//     }
+// }
+
+// triangle.base = triangle.sides[0];  //base is the 1st side in the triangle.sides array.
+// triangle.height = 6.71; //determine the height using basic geometry.  How do you calculate the height of a triangle with 2 equal sides?  If you use the formula to caluclate the height, this is a bonus.  If you hard code the correct value here, that will be sufficient, but no bonus :(
+
+// console.log(triangle);
+// triangle.calcArea();
+// triangle.calcPerimeter();
+
+// const rectangle = {
+//     name : "rectangle",
+//     sides : 4,
+//     length : 2,
+//     width : 5,
+//     calcArea : function() {
+//         console.log(`${this.name}'s area is calculated to be : ${this.length * this.width}`);
+//     },
+//     calcPerimeter : function() {
+//         console.log(`${this.name}'s perimeter is calculated to be : ${(2 * this.length) + (2 * this.width) }`)
+//     }
+// }
+
+// console.log(rectangle);
+// rectangle.calcArea();
+// rectangle.calcPerimeter();
+
+// const circle = {
+//     name : "circle",
+//     sides : 1,
+//     radius : 5,
+//     calcArea : function() {
+//         console.log(`${this.name}'s area is calculated to be : ${(Math.PI * this.radius**2).toFixed(2)}`);
+//     },
+//     calcCircumference : function() {
+//         console.log(`${this.name}'s circumference is calculated to be : ${(2 * Math.PI * this.radius).toFixed(2)}`)
+//     }
+// }
+
+// console.log(circle);
+// circle.calcCircumference();
+// circle.calcArea();
 
 
 /*********************************************** 
