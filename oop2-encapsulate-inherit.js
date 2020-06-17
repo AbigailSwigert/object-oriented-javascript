@@ -247,3 +247,25 @@ Each Book instance should contain instances of the Authors, the Publishers, and 
 
 
     //your code here...
+
+    //Began working on bonus, unfinished
+
+    class Bookstore {
+        #storeName;
+        #booksArray = [];
+        constructor(storeName) {
+            this.#storeName = storeName;
+        }
+        addBook(book) {
+            this.#booksArray.push(book);
+        }
+        getBookArray() {
+            return this.#booksArray
+        }
+    }
+
+    const barnesAndNoble = new Bookstore('Barnes and Noble');
+
+    barnesAndNoble.addBook(myBook = new Book('My Book', 'Me', 'My Publisher'))
+    barnesAndNoble.addBook(secondBook = new Book('My Second Book', 'Me', 'My Publisher'));
+    console.log(barnesAndNoble.getBookArray())
