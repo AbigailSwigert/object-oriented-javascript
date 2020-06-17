@@ -1,4 +1,3 @@
-
 /*
 1. Create a Abstract Creature class that is NOT allowed to be instantiated. Find a way to prevent this class from being instantiated with an instance.  In the Creature class, include two abstract methods.  move(), and act().  These methods are NOT allowed to be invoked from the Abstract class, so throw an error in these methods if they are invoked by any inherited sub-classes.  
 
@@ -17,14 +16,70 @@ These sub-classes MUST implement the abstract methods of move() and act(), which
 
 */
 
-    class Creature {
-        //your code here...
+class Creature {
+    constructor() {
+        if(this.constructor == Creature) {
+            throw new Error('Unable to instantiate Abstract Class Creature.');
+        }
     }
-
-    class Human extends Creature {
-        //your code here...
+    act() {
+        throw new Error('This is an abstract method. It cannot be invoked')
     }
+    move() {
+        throw new Error('This is an abstract method. It cannot be invoked')
+    }
+}
 
+class Human extends Creature {
+    constructor(fullName, currentLocation) {
+        super();
+        this.fullName = fullName;
+        this.currentLocation = currentLocation;
+    }
+    act() {
+        console.log(`${this.fullName} is playing video games.`)
+    }
+    move(newLocation) {
+        console.log(`${this.fullName} has left ${this.currentLocation} and is on their way to ${newLocation}`)
+    }
+    read(book) {
+        console.log(`${this.fullName} is reading ${book}.`)
+    }
+}
+
+class Dragon extends Creature {
+    constructor(scaleColor, valueOfHoard) {
+        super();
+        this.scaleColor = scaleColor;
+        this.valueOfHoard = valueOfHoard;
+    }
+    act() {
+        console.log(`The dragon is guarding their hoard of treasures worth $${this.valueOfHoard}.`)
+    }
+    move() {
+        console.log(`The dragon's ${this.scaleColor} scales sparkle as they fly over the burned down villages.`)
+    }
+    breatheFire() {
+        console.log(`The ${this.scaleColor} dragon is breathing fire!`)
+    }
+}
+
+class Snake extends Creature {
+    constructor(lengthInFeet, locationNativeTo) {
+        super();
+        this.lengthInFeet = lengthInFeet;
+        this.locationNativeTo = locationNativeTo;
+    }
+    act() {
+        console.log('The snake is strangling its prey')
+    }
+    move() {
+        console.log(`The ${this.lengthInFeet}ft snake is slithering through ${this.locationNativeTo}.`)
+    }
+    eatWhole(prey) {
+        console.log(`The snake is swallowing the ${prey} whole!`)
+    }
+}
 
 
 
