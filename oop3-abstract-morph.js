@@ -209,7 +209,8 @@ class Cook {
     }
 
     explain = () => {
-        console.log("what could you do to get the prepare function to print out the food items that are being passed in to the function?  Once you figure it out, Write down your thought process in this explain method.");
+        console.log(/*"what could you do to get the prepare function to print out the food items that are being passed in to the function?  Once you figure it out, Write down your thought process in this explain method."*/
+        "You could switch the first prepare function, witch takes the food items as arguement, into an arrow function, or a function expression, and switch the secound prepare funtion to shorthand method definition");
     }
 
 }
